@@ -1,0 +1,35 @@
+<!-- Component pai -->
+<h2>Products</h2>
+
+<!-- DIRETIVA criar um loop com lista de produtos -->
+<div *ngFor="let product of products">
+  <h3>
+    <!-- Associacao de atributo -->
+    <!-- DIRETIVA de rotas para URL fixo  -->
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products/', product.id]"
+    >
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <!-- DIRETIVA se produtos tiverem descricao entao criar novo elemento p com a descricao -->
+  <p *ngIf="product.description" style="color: rgb(133, 127, 127)">
+    Product description: {{ product.description }}
+  </p>
+
+  <!-- Ouvintes de eventos que chama a funcao share na classe do produtc-list-component.ts -->
+  <button type="button" (click)="share()">Share</button>
+
+  <!-- Component filho vinculado com o metodo onNotify -->
+
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

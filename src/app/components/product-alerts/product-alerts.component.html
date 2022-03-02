@@ -1,0 +1,7 @@
+<!-- Component filho -->
+<!-- DIRETIVA se tiver produtos and produtos com preco maior que 700 exiba um botao -->
+<p *ngIf="product && product.price > 700">
+  <!-- Evento click chama o metodo onNotify no componentPai.ts -->
+  <button type="button" (click)="notify.emit()">Notify Me</button>
+</p>
+
