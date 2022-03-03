@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  width: 350px;
+  max-width: 500px;
   margin: 0 auto;
   margin-top: 16px;
   box-shadow: 0 0 6px 1px;
@@ -135,7 +135,6 @@ app-top-bar h1 {
 
 /* Checkout Cart, Shipping Prices */
 
-.cart-item,
 .shipping-item {
   width: 100%;
   min-width: 400px;
@@ -154,7 +153,3 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */
-
-.btn__flex{
-  background-color:red;
-}
