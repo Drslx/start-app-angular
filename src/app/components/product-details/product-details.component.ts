@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
@@ -22,23 +21,20 @@ export class ProductDetailsComponent implements OnInit {
     private cartService: CartService,
   ) {}
 
-
-  
   ngOnInit() {
     // Pega o id na rota
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = Number(routeParams.get("productId"));
-    
+
     //
     this.product = products.find(
       (product) => product.id === productIdFromRoute,
-      );
-      
-    }
-    
-    // Metodo que adiciona o produto atual ao cart
-    addToCart(product: Product){
-   this.cartService.addTocart(product)
-   window.alert('Your product has been added to the cart')
-    }
+    );
+  }
+
+  // Metodo que adiciona o produto atual ao cart
+  addToCart(product: Product) {
+    this.cartService.addTocart(product);
+    window.alert("Your product has been added to the cart");
+  }
 }

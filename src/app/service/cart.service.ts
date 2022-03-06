@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
+// Model
 import { Product } from "./../shared/models/products.model";
 
 @Injectable({
@@ -8,6 +10,7 @@ import { Product } from "./../shared/models/products.model";
 export class CartService {
   items: Product[] = [];
 
+  constructor(private http: HttpClient) {}
   // O addToCart()método anexa um produto a uma matriz de items.
   addTocart(product: Product) {
     this.items.push(product);
@@ -23,5 +26,11 @@ export class CartService {
     this.items = [];
     return this.items;
   }
-  constructor() {}
+
+  // getShippingPrices()método que utilize o HttpClient get()método.
+  getShippingPrices() {
+    return this.http.get<{ type: string; price: number }[]>(
+      "/assets/shipping.json",
+    );
+  }
 }
