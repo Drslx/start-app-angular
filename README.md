@@ -1,4 +1,3 @@
 # start-app-angular
 
-
-next commit - Define the checkout form model
+next commit - Deploying an application
