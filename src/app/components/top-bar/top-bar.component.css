@@ -1,6 +1,11 @@
 h1:hover {
   opacity: 0.8;
 }
+
+h1::first-letter{
+  font-style: italic;
+  font-size: 1.3em;
+}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

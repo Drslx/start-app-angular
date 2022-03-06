@@ -1,4 +1,4 @@
 # start-app-angular
 
 
-next commit - configurar httpclient
+next commit - Define the checkout form model
