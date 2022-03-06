@@ -7,12 +7,12 @@ import { CartService } from "../../service/cart.service";
   templateUrl: "./cart.component.html",
   styleUrls: ["./cart.component.css"],
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
   // propriedade para armazenar os produtos no carrinho.
   items = this.cartService.getItems();
 
   // Services injetado
-  constructor(private cartService: CartService) {}
-
-  ngOnInit(): void {}
+  constructor(
+    private cartService: CartService
+  ) { }
 }
